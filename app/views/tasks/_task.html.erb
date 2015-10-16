@@ -9,10 +9,10 @@
       <p id="complete-by">Complete by: <%= task.due_on %></p>
     <% end %>
     <p>Status: <%= task.completed ? "Complete":"Incomplete"%></p>
-  </div>
-  <div class="btn">
-    <button type="button" id="done-button" data-loading-text="Completed!" class="btn btn-primary" autocomplete="off">
-    <%= task.completed ? "Wait, I'm Not Done!":"I'm Done!"%>
-    </button>
+
+    <% task.completed ? (btn_text = "Wait, I'm Not Done!"):(btn_text = "I'm Done!")%>
+  
+    <%= link_to btn_text, task_path(id: task.id, task: { completed: !task.completed}), method: :patch, class: "btn btn-primary", id: "done-button" %>
+
   </div>
 </div>
