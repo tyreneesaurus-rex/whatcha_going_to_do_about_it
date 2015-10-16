@@ -7,7 +7,7 @@ class TasksController < ApplicationController
     end
     render :nothing => true
   end
-  
+
   # GET /tasks
   def index
     @tasks = Task.all
@@ -39,11 +39,7 @@ class TasksController < ApplicationController
 
   # PATCH/PUT /tasks/1
   def update
-    if @task.update(task_params)
-      redirect_to @task, notice: 'Task was successfully updated.'
-    else
-      render :edit
-    end
+    @task.update(task_params)
   end
 
   # DELETE /tasks/1
