@@ -6,4 +6,16 @@
   <div class="panel-body">
     <%= truncate task.description, length: 50 %>
   </div>
+  <div class="btn">
+    <button type="button" id="myButton" data-loading-text="Completed!" class="btn btn-primary" autocomplete="off">
+    Working On It
+    </button>
+    <script>
+    $('#myButton').on('click', function () {
+      var $btn = $(this).button('loading')
+      // business logic...
+      $btn.button('reset')
+    })
+    </script>
+  </div>
 </div>
