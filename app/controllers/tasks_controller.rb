@@ -1,6 +1,13 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
 
+  def sort
+    params[:order].each do |key,value|
+      Task.find(value[:id]).update_attribute(:priority,value[:position])
+    end
+    render :nothing => true
+  end
+  
   # GET /tasks
   def index
     @tasks = Task.all
