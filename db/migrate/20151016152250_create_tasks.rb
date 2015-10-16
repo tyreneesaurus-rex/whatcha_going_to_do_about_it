@@ -4,7 +4,7 @@ class CreateTasks < ActiveRecord::Migration
       t.string :name
       t.string :description
       t.date :due_on
-      t.float :priority
+      t.decimal :priority
       t.boolean :completed
 
       t.timestamps null: false
