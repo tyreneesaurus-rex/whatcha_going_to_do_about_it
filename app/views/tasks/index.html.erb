@@ -2,18 +2,10 @@
   <div class="col-md-5 col-md-offset-4 sortable">
     <%  if @tasks.any? %>
         <%= render @tasks %>
-        <%= link_to 'Create Task', new_task_path, class: "btn btn-success" %>
+        <%= link_to 'Create Task', new_task_path, class: "btn btn-success", id: "done-button" %>
         </p>
     <% else %>
     <p>No tasks found <%= link_to "Create Task", new_task_path %></p>
     <% end %>
   </div>
-    <div class="col-md-5 col-md-offset-4 sortable">
-      <%  if @tasks.any? %>
-          <%= render @tasks %>
-          <p><%= link_to "Create Task", new_task_path %></p>
-      <% else %>
-      <p>No tasks found <%= link_to "Create Task", new_task_path %></p>
-      <% end %>
-    </div>
 </div>
