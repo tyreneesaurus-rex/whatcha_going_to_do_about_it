@@ -16,13 +16,11 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- td, th {
-   border-right:   1px solid gray;
-   border-bottom:  1px solid gray;
-   border-left:    1px solid gray;
-   padding: 3px;
- }
+#complete-by{
+  padding-top: 3%;
+  color: blue;
+}
 
- th {
-   border: 1px solid gray;
- }
+.panel-heading{
+  background-color: #FFF;
+}

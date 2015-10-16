@@ -5,5 +5,8 @@
   </div>
   <div class="panel-body">
     <%= truncate task.description, length: 50 %>
+    <% if task.due_on %>
+    <p id="complete-by">Complete by: <%= task.due_on %></p>
+    <% end %>
   </div>
 </div>
