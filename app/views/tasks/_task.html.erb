@@ -1,4 +1,3 @@
-<!-- adding data-id attribute -->
 <div class="panel panel-default" data-id="<%= task.id %>">
   <div class="panel-heading">
     <h3 class="panel-title"><%= task.name %></h3>
@@ -8,11 +7,8 @@
     <% if task.due_on %>
       <p id="complete-by">Complete by: <%= task.due_on %></p>
     <% end %>
-    <p>Status: <%= task.completed ? "Complete":"Incomplete"%></p>
 
-    <% task.completed ? (btn_text = "Wait, I'm Not Done!"):(btn_text = "I'm Done!")%>
-  
-    <%= link_to btn_text, task_path(id: task.id, task: { completed: !task.completed}), method: :patch, class: "btn btn-primary", id: "done-button" %>
+    <%= render partial: 'status', locals:{task: task} %>
 
   </div>
 </div>

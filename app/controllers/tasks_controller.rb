@@ -39,11 +39,7 @@ class TasksController < ApplicationController
 
   # PATCH/PUT /tasks/1
   def update
-    if @task.update(task_params)
-      redirect_to tasks_path, notice: 'Task was successfully updated.'
-    else
-      render :edit
-    end
+    @task.update(task_params)
   end
 
   # DELETE /tasks/1
