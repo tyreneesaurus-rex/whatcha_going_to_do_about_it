@@ -10,4 +10,9 @@
     <% end %>
     <p>Status: <%= task.completed ? "Complete":"Incomplete"%></p>
   </div>
+  <div class="btn">
+    <button type="button" id="done-button" data-loading-text="Completed!" class="btn btn-primary" autocomplete="off">
+    <%= task.completed ? "Wait, I'm Not Done!":"I'm Done!"%>
+    </button>
+  </div>
 </div>

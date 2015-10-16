@@ -15,3 +15,7 @@
 //= require html.sortable
 //= require turbolinks
 //= require_tree .
+
+$('#done-Button').on('click', function () {
+  var $btn = $(this).button('loading')
+})
