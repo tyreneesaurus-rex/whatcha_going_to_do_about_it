@@ -1,1 +1,1 @@
-$(".panel-body").
+$("#status-<%=@task.id%>").html("<%= j(render partial: 'status', locals:{task: @task})%>")
