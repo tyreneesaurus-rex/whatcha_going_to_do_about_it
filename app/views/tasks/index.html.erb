@@ -1,13 +1,11 @@
 <div class="row">
-  <div class="col-md-2">
-    <img src="https://gs1.wac.edgecastcdn.net/8019B6/data.tumblr.com/tumblr_lphm4enunH1qj6y3go1_500.png"/>
+  <div class="col-md-5 col-md-offset-4 sortable">
+    <%  if @tasks.any? %>
+        <%= render @tasks %>
+        <%= link_to 'Create Task', new_task_path, class: "btn btn-success", id: "done-button" %>
+        </p>
+    <% else %>
+    <p>No tasks found <%= link_to "Create Task", new_task_path %></p>
+    <% end %>
   </div>
-    <div class="col-md-5 col-md-offset-4 sortable">
-      <%  if @tasks.any? %>
-          <%= render @tasks %>
-          <p><%= link_to "Create Task", new_task_path %></p>
-      <% else %>
-      <p>No tasks found <%= link_to "Create Task", new_task_path %></p>
-      <% end %>
-    </div>
 </div>
