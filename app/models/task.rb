@@ -1,5 +1,6 @@
 class Task < ActiveRecord::Base
-  validates_presence_of :title, :description
+  validates :name, presence: true
+  validates :description, presence: true
 
   default_scope { order("priority ASC") }
 end
