@@ -7,6 +7,6 @@
     <% if task.due_on %>
       <p id="complete-by">Complete by: <%= task.due_on %></p>
     <% end %>
-    <%= render partial: 'status', locals: { task: task } %>
+    <%= render partial: 'status', locals:{task: task} %>
   </div>
 </div>
