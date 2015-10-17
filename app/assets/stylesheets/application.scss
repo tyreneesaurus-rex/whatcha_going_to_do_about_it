@@ -16,6 +16,12 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+.jumbotron {
+  background-image: url("gandalf.png");
+  background-size: cover;
+  color: #ddfb35;
+}
+
 #complete-by{
   padding-top: 3%;
   color: blue;
