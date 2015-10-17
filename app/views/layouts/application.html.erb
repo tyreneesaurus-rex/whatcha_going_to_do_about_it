@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<%= render 'layouts/navbar' %>
 <html>
 <head>
   <title>WhatchaGoingToDo</title>
@@ -8,8 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="container">
+
+  <%= render 'layouts/navbar' %>
 
 <%= yield %>
-
+</div>
 </body>
 </html>
