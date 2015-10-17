@@ -17,9 +17,26 @@
  @import "bootstrap";
 
 .jumbotron {
-  background-image: url("gandalf.png");
+  background-image: url("productivity.jpg");
+  color: #FFF;
+  min-height: 362px;
   background-size: cover;
-  color: #ddfb35;
+  // width: 900px;
+  h1{
+    text-align: center;
+    text-shadow: 2px 2px 8px #000000;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+body{
+  //background-image: url("http://www.aamrofreight.net/wp-content/uploads/2014/06/blue-abstract-background.jpg");
+  background-color: #183B4F;
+}
+
+.container{
+  background-color: #F1F1F1;
 }
 
 #complete-by{
