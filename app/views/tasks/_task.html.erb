@@ -1,16 +1,6 @@
 <div id="task-panel-<%=task.id%>">
-  <% panel_type = "panel " %>
-  <!-- Incoming excessive view logic! -->
-  <!-- Not handled in controller/model because Ajax -->
-  <% if task.completed %>
-    <% panel_type += "panel-success" %>
-  <% else %>
-    <% if task.due_on && (task.due_on - Date.today <= 1) %>
-      <% panel_type += task.due_on < Date.today ? "panel-danger":"panel-warning"%>
-    <% else %>
-      <% panel_type += "panel-primary" %>
-    <% end %>
-  <% end %>
+
+  <% panel_type = task.urgency %>
 
   <div class="<%= panel_type %>" data-id="<%= task.id %>">
     <div class="panel-heading">
