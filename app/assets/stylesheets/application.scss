@@ -18,8 +18,29 @@
 
 .jumbotron {
   background-image: url("productivity.jpg");
-  background-size: cover;
+
   color: #FFF;
+  min-height: 362px;
+  background-size: cover;
+  // width: 900px;
+  h1{
+    text-align: center;
+    text-shadow: 2px 2px 8px #000000;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}
+
+body{
+  //background-image: url("http://www.aamrofreight.net/wp-content/uploads/2014/06/blue-abstract-background.jpg");
+  background-color: #183B4F;
+}
+
+// .glyphicon{
+//   display: ;
+// }
+.container{
+  background-color: #F1F1F1;
 }
 
 #complete-by{

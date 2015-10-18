@@ -1,17 +1,17 @@
-<div class="jumbotron">
-    <h1>To-Dos</h1>
-    <p>Get on it!</p>
+
+<div class="jumbotron col-md-10 col-md-offset-1">
+  <h1>Things To Do</h1>
 </div>
 
-<div class="row">
-  <div class="col-md-5 col-md-offset-2 sortable">
-    <%  if @tasks.any? %>
+<div class="tasks">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-1 sortable">
+      <%  if @tasks.any? %>
         <%= render @tasks %>
-        <%= link_to 'Create Task', new_task_path, class: "btn btn-success", id: "done-button" %>
-        </p>
-    <% else %>
-    <p>No tasks found <%= link_to "Create Task", new_task_path %></p>
-    <% end %>
+      <% end%>
+    </div>
+    <div class="col-md-1 col-md-offset-1">
+      <%= link_to 'Create New Task', new_task_path, class: "btn btn-success", id: "done-button" %>
     </div>
   </div>
 </div>
