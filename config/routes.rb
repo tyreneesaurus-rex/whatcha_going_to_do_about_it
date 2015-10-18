@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'tasks#index'
+  root 'tasks#login'
+  # 'tasks#index'
   resources :tasks do
     put :sort, on: :collection
   end
