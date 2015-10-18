@@ -30,6 +30,12 @@
   }
 }
 
+.panel-title{
+  i{
+    color: black;
+  }
+}
+
 body{
   //background-image: url("http://www.aamrofreight.net/wp-content/uploads/2014/06/blue-abstract-background.jpg");
   background-color: #183B4F;
@@ -37,6 +43,8 @@ body{
 
 .container{
   background-color: #F1F1F1;
+  background-size: cover;
+  color: #FFF;
 }
 
 #complete-by{
@@ -44,8 +52,8 @@ body{
   color: blue;
 }
 
-.panel-heading{
-  background-color: #FFF;
+.panel-body{
+  color: #000;
 }
 
 #done-button{
