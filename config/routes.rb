@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  root  'sessions#new'
-  get   'login'     =>    'sessions#new'
-  get   'signup'    =>    'users#new'
+  root    'sessions#new'
+  get     'login'     =>    'sessions#new'
+  get     'signup'    =>    'users#new'
+  delete  'logout'    =>    'sessions#destroy'
+
   # root    'tasks#index'
   resources :tasks do
     put :sort, on: :collection

@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :check_logged_in
 
   def sort
     params[:order].each do |key,value|
@@ -29,7 +30,6 @@ class TasksController < ApplicationController
   # POST /tasks
   def create
     @task = Task.new(task_params)
-
     if @task.save
       redirect_to tasks_path, notice: 'Task was successfully created.'
     else
@@ -56,6 +56,10 @@ class TasksController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def task_params
-      params.require(:task).permit(:name, :description, :due_on, :priority, :completed)
+      params.require(:task).permit(:name, :description, :due_on, :priority, :completed, :user_id)
+    end
+
+    def check_logged_in
+      redirect_to login_path, notice: "You must log in first" unless session[:user_id]
     end
 end
