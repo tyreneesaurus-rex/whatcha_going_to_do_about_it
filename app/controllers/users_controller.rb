@@ -24,11 +24,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:notice] = "You signed up successfully"
+      redirect_to tasks_path, notice: "You signed up successfully"
     else
-      flash[:alert] = "Form is invalid"
+      flash.now[:alert] = "Form is invalid"
+      render "new"
     end
-     render "new"
   end
 
   # PATCH/PUT /users/1
@@ -54,6 +54,6 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:name, :email, :password_digest)
+      params.require(:user).permit(:name, :email, :password)
     end
 end

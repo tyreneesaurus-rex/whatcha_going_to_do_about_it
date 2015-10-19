@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  resources :users
-  root  'tasks#login'
+
+  root  'sessions#new'
+  get   'login'     =>    'sessions#new'
+  get   'signup'    =>    'users#new'
   # root    'tasks#index'
   resources :tasks do
     put :sort, on: :collection
   end
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
