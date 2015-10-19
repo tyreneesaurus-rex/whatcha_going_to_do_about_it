@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   resources :tasks do
     put :sort, on: :collection
   end
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :users,     except: [:index, :show]
+  resources :sessions,  only: [:new, :create, :destroy]
 end
 
   # The priority is based upon order of creation: first created -> highest priority.
