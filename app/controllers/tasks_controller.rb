@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :check_logged_in
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :check_id, only: [:show, :edit, :update, :destroy]
 
   def sort
     params[:order].each do |key,value|
@@ -52,6 +53,10 @@ class TasksController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_task
       @task = Task.find(params[:id])
+    end
+
+    def check_id
+      redirect_to tasks_path, alert: "You do not have permission to do that." unless @task.user_id == session[:user_id]
     end
 
     # Only allow a trusted parameter "white list" through.
