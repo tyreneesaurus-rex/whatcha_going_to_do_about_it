@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
     if @user.password == params[:password]
       give_token
     else
-      redirect_to home_url
+      redirect_to root_path
     end
   end
 
